@@ -1,1 +1,28 @@
-[{"outputType":{"type":"PROCESSED_RES"},"apkData":{"type":"MAIN","splits":[],"versionCode":11,"versionName":"1.11","enabled":true,"outputFile":"launcher-release.apk","fullName":"release","baseName":"release","dirName":""},"path":"resources-release.ap_","properties":{"packageId":"com.MatthewDemoe.FloppaBird","split":"","minSdkVersion":"28"}}]
+{
+  "version": 1,
+  "applicationId": "com.MatthewDemoe.FloppaBird",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 12,
+        "versionName": "1.12",
+        "outputFile": "launcher-release.apk",
+        "fullName": "release",
+        "baseName": "release",
+        "dirName": ""
+      },
+      "path": "resources-release.ap_",
+      "properties": {
+        "packageId": "com.MatthewDemoe.FloppaBird",
+        "split": "",
+        "minSdkVersion": "28"
+      }
+    }
+  ]
+}

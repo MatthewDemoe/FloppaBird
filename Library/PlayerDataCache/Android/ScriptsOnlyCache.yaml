@@ -1,5 +1,25 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp.dll:
+    - Animation.FlopAnimationHelper
+    - DestroyIfIOS
+    - GameSystems.AudioSettingAdjuster
+    - GameSystems.AudioSourcePool
+    - GameSystems.FloppaAudioPlayer
+    - GameSystems.GameController
+    - GameSystems.GroundTileTranslator
+    - GameSystems.InputRouter
+    - GameSystems.MovementController
+    - GameSystems.PipeCreator
+    - GameSystems.PipeDestroyer
+    - GameSystems.PipeTranslator
+    - GameSystems.PlayerCharacter
+    - GameSystems.ScoreTracker
+    - GameSystems.SpriteController
+    - GameSystems.SpriteCreator
+    - SceneTransitioner
+    - Utility.DoNotDestroyOnLoad
+    - Utility.StartupActionsRunner
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -27,10 +47,21 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
+    - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -43,12 +74,69 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
+    - TMPro.VertexGradient
+    UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
+    - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.Events.UnityEvent
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
-  methodsToPreserve: []
+    UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Animation.FlopAnimationHelper
+    methodName: PlayFlopAnimation
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.MovementController
+    methodName: AddFlopForce
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.FloppaAudioPlayer
+    methodName: PlayFlapClip
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.GameController
+    methodName: ResetGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.GameController
+    methodName: Quit
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.PlayerCharacter
+    methodName: Initialize
+  - assembly: Assembly-CSharp
+    fullTypeName: GameSystems.PipeCreator
+    methodName: StartCreatingPipes
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -59,24 +147,106 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 66
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 1572}
     - Class: 114
-      Script: {instanceID: 14830}
+      Script: {instanceID: 2350}
     - Class: 114
-      Script: {instanceID: 15168}
+      Script: {instanceID: 2566}
     - Class: 114
-      Script: {instanceID: 16072}
+      Script: {instanceID: 2642}
+    - Class: 114
+      Script: {instanceID: 2862}
+    - Class: 114
+      Script: {instanceID: 2918}
+    - Class: 114
+      Script: {instanceID: 2960}
+    - Class: 114
+      Script: {instanceID: 3128}
+    - Class: 114
+      Script: {instanceID: 3490}
+    - Class: 114
+      Script: {instanceID: 3712}
+    - Class: 114
+      Script: {instanceID: 4022}
+    - Class: 114
+      Script: {instanceID: 4148}
+    - Class: 114
+      Script: {instanceID: 4550}
+    - Class: 114
+      Script: {instanceID: 4776}
+    - Class: 114
+      Script: {instanceID: 4778}
+    - Class: 114
+      Script: {instanceID: 5116}
+    - Class: 114
+      Script: {instanceID: 5910}
+    - Class: 114
+      Script: {instanceID: 5924}
+    - Class: 114
+      Script: {instanceID: 5936}
+    - Class: 114
+      Script: {instanceID: 6032}
+    - Class: 114
+      Script: {instanceID: 6100}
+    - Class: 114
+      Script: {instanceID: 6310}
+    - Class: 114
+      Script: {instanceID: 6518}
+    - Class: 114
+      Script: {instanceID: 6782}
+    - Class: 114
+      Script: {instanceID: 6980}
+    - Class: 114
+      Script: {instanceID: 6986}
+    - Class: 114
+      Script: {instanceID: 7402}
+    - Class: 114
+      Script: {instanceID: 7892}
+    - Class: 114
+      Script: {instanceID: 7952}
+    - Class: 114
+      Script: {instanceID: 7962}
+    - Class: 114
+      Script: {instanceID: 8042}
+    - Class: 114
+      Script: {instanceID: 8278}
+    - Class: 114
+      Script: {instanceID: 8522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -85,21 +255,35 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UIElements
-    className: PanelRaycaster
   - hash:
       serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UIElements
+    className: PanelRaycaster
   - hash:
       serializedVersion: 2
       Hash: 61f2059db36c32396c3d12077855592b
@@ -1135,4 +1319,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: E:/Documents/Unity Projects/Floppa Bird 3.0/Builds/FloppaBuildReleaseNoExport.aab
+  playerPath: E:/Documents/Unity Projects/Floppa Bird 3.0/Builds/FloppaBuildRelease.aab
